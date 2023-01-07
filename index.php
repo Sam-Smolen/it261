@@ -42,6 +42,7 @@
             <li><a href="">something2.php</a></li>
         </ul>
         </aside>
+        <img class="left "src="images/mamp.png" width="1000px" height="800px" alt="mamp">
 
     </div>
 </body>
