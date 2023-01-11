@@ -54,7 +54,7 @@ echo '<br>';
 $product = 120; // is our integer
 $quantity = 5;
 $total = $product * $quantity;
-$total *= 1.105;
+$total *= 1.098;
 echo '<br>';
 
 echo '<br>';
