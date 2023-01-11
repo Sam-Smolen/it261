@@ -36,8 +36,8 @@
         <h2>Weekly Class Exercises</h2>
         <h3>Week 2</h3>
         <ul>
-            <li><a href="var.php">var.php</a></li>
-            <li><a href="">var2.php</a></li>
+            <li><a href="weeks/week2/var.php">var.php</a></li>
+            <li><a href="weeks/week2/var2.php">var2.php</a></li>
             <li><a href="">something.php</a></li>
             <li><a href="">something2.php</a></li>
         </ul>
