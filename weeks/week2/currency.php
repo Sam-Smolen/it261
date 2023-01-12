@@ -1,16 +1,25 @@
 <?php
 // understanding the logic
-// 1 ruble = 0.017 dollars
-// 1 pound sterling = 1.15 dollars
-// 1 canadian dollar = .76 dollars
-// 1 euro = 1.00 dollars
-// 1 yen = .0074
+$ruble_rate = 0.017 ;
+$pound_rate = 1.15 ;
+$canadian_rate = .76 ;
+$euro_rate = 1.00 ;
+$yen_rate = .0074 ;
 
-// rubles = 10007 = 117.11
-// pound sterling = 500 = 575
-// canada = 5000 = 3000
-// euros = 1200 = 1200
-// yen = 2000 = 14.80 
+$ruble = 10007 ;
+$pound = 500 ;
+$canadian = 5321 ;
+$euro = 1200 ;
+$yen = 2000 ;
+
+$ruble_converted = $ruble * $ruble_rate;
+$pound_converted = $pound * $pound_rate;
+$canadian_converted = $canadian * $canadian_rate;
+$euro_converted = $euro * $euro_rate;
+$yen_converted = $yen * $yen_rate;
+
+$total = $ruble_converted + $pound_converted + $canadian_converted + $euro_converted + $yen_converted;
+
 
 ?>
 <!DOCTYPE html>
@@ -75,29 +84,37 @@ h1, h2, h3 {
 </tr>
 <tr>
 <th>Rubles</th>
-<td>1007</td>
-<td>117.11</td>
+<td><?php echo $ruble;  ?></td>
+<td>$<?php echo $ruble;  ?></td>
 </tr>
 <tr>
 <th>Pound sterling</th>
-<td>500</td>
-<td>575</td>
+<td><?php echo $pound;  ?></td>
+<td>$<?php   ?></td>
 </tr>
 <tr>
 <th>Canandian dollars</th>
-<td>5000</td>
-<td>3000</td>
+<td><?php echo $canadian;  ?></td>
+<td>$<?php   ?></td>
 </tr>
 <tr>
 <th>Euros</th>
-<td>1200</td>
-<td>1200</td>
+<td><?php echo $euro;  ?></td>
+<td>$<?php   ?></td>
 </tr>
 <tr>
 <th>Yens</th>
-<td>2000</td>
-<td>14.80</td>
+<td><?php echo $yen;  ?></td>
+<td>$<?php   ?></td>
 </tr>
+
+<tr>
+<th>Total</th>
+<td>American Dollars</td>
+<td>$<?php   ?></td>
+</tr>
+
+
 </table>
 
 
