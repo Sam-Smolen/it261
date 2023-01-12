@@ -38,8 +38,8 @@
         <ul>
             <li><a href="weeks/week2/var.php">var.php</a></li>
             <li><a href="weeks/week2/var2.php">var2.php</a></li>
-            <li><a href="">something.php</a></li>
-            <li><a href="">something2.php</a></li>
+            <li><a href="weeks/week2/currency.php">currency.php</a></li>
+            <li><a href="weeks/week2/currency_logic.php">currency_logic.php</a></li>
         </ul>
         </aside>
         <img class="left "src="images/mamp.png" width="1000px" height="800px" alt="mamp">
