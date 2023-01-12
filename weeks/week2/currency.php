@@ -9,8 +9,8 @@ $yen_rate = .0074 ;
 $ruble = 10007 ;
 $pound = 500 ;
 $canadian = 5321 ;
-$euro = 1200 ;
-$yen = 2000 ;
+$euro = 1291 ;
+$yen = 4030 ;
 
 $ruble_converted = $ruble * $ruble_rate;
 $pound_converted = $pound * $pound_rate;
@@ -85,33 +85,33 @@ h1, h2, h3 {
 <tr>
 <th>Rubles</th>
 <td><?php echo $ruble;  ?></td>
-<td>$<?php echo $ruble;  ?></td>
+<td>$<?php echo ''.number_format($ruble_converted, 2).'';  ?></td>
 </tr>
 <tr>
 <th>Pound sterling</th>
 <td><?php echo $pound;  ?></td>
-<td>$<?php   ?></td>
+<td>$<?php echo ''.number_format($pound_converted, 2).'';  ?></td>
 </tr>
 <tr>
 <th>Canandian dollars</th>
 <td><?php echo $canadian;  ?></td>
-<td>$<?php   ?></td>
+<td>$<?php echo ''.number_format($canadian_converted, 2).'';  ?></td>
 </tr>
 <tr>
 <th>Euros</th>
 <td><?php echo $euro;  ?></td>
-<td>$<?php   ?></td>
+<td>$<?php echo ''.number_format($euro_converted, 2).'';  ?></td>
 </tr>
 <tr>
 <th>Yens</th>
 <td><?php echo $yen;  ?></td>
-<td>$<?php   ?></td>
+<td>$<?php echo ''.number_format($yen_converted, 2).'';  ?></td>
 </tr>
 
 <tr>
 <th>Total</th>
 <td>American Dollars</td>
-<td>$<?php   ?></td>
+<td>$<?php echo ''.number_format($total, 2).'';  ?></td>
 </tr>
 
 
