@@ -43,6 +43,7 @@
         </ul>
         </aside>
         <img class="left "src="images/mamp.png" width="1000px" height="800px" alt="mamp">
+        <img class="left "src="images/mampError.png" width="1000px" height="500px" alt="mamp error">
 
     </div>
 </body>
