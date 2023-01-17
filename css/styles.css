@@ -7,7 +7,7 @@
 }
 
 body {
-    background: lavender;
+    background: #3E517A;
 }
 
 #wrapper {
@@ -17,7 +17,7 @@ body {
 
 nav {
     height: 60px;
-    background: lightseagreen;
+    background: #B08EA2;
     line-height: 60px;
     margin-bottom: 20px;
 }
@@ -50,9 +50,10 @@ aside {
 }
 
 .left {
-    float: left;
+    max-width: 100%;
     margin: 50px 0;
 }
+
 
 h1 {
     text-align: center;
@@ -68,4 +69,43 @@ h2 {
 
 main h2, aside h2 {
     text-align: left;
+}
+
+header {
+    color: white;
+}
+header a {
+    color: #A8E0FF;
+}
+
+h2.display__2 {
+    color: white;
+    font-size: 2em;
+}
+
+h3.display__3 {
+    color: white;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+}
+
+ul.weekly__exercises a {
+    color: #A8E0FF;
+}
+
+.about__me {
+    color: white;
+    line-height: 2;
+}
+
+footer {
+    
+    clear: both;
+    text-align: center;
+    padding: 1em;
+    color: white;
+  }
+
+footer a {
+    color: #A8E0FF;;
 }

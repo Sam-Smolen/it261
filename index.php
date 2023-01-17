@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 <body>
+    <header>
     <h1>
         <a href="index.php">Sam's Portal Page</a>
     </h1>
-    <h2>The navigation below represents our BIG assignments.</h2>
+    <h2>Welcome to my IT261 Portal website</h2>
+    </header>
     <div id="wrapper">
         <nav>
             <ul>
@@ -23,28 +25,34 @@
                 <li><a href="">Gallery</a></li>
             </ul>
         </nav>
-
         <main>
-        <h2>About Sam</h2>
+        <h2 class="display__2">About Sam</h2>
         <img class="right" src="images/me.jpg" width="300px" height="350px" alt="Picture of me">
-        <p>
-            A paragraph about me Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur velit officia officiis libero quo reiciendis nobis autem accusamus est quas.
+        <p class="about__me">
+            A Little bit about me! <br>
+            My name is Sam Smolen. I'm currently studying computer programming at Seattle Central College while also employed as a general contractor. My career interests in programming are in the backend rather than design. Although I want to learn how to build full stack applications. <br>I like to spend my freetime with my girlfriend, family or friends, and also my dog Moose. <br>Hobbies of mine would be playing video games, golfing, playing frisbee or working out.
         </p>
+        <img class="left" src="images/mamp.png" width="1000px" height="500px" alt="mamp">
+        <img class="left" src="images/mampError.png" width="1000px" height="500px" alt="mamp error">
         </main>
-
         <aside>
-        <h2>Weekly Class Exercises</h2>
-        <h3>Week 2</h3>
-        <ul>
+        <h2 class="display__2">Weekly Class Exercises</h2>
+        <h3 class="display__3">Week 2</h3>
+        <ul class="weekly__exercises">
             <li><a href="weeks/week2/var.php">var.php</a></li>
-            <li><a href="weeks/week2/var2.php">var2.php</a></li>
+            <li><a href="weeks/week2/vars2.php">vars2.php</a></li>
             <li><a href="weeks/week2/currency.php">currency.php</a></li>
             <li><a href="weeks/week2/currency-logic.php">currency-logic.php</a></li>
+            <li><a href="weeks/week2/heredoc.php">heredoc.php</a></li>
         </ul>
         </aside>
-        <img class="left "src="images/mamp.png" width="1000px" height="800px" alt="mamp">
-        <img class="left "src="images/mampError.png" width="1000px" height="500px" alt="mamp error">
-
+        <footer>
+             <p><small>&copy; 2022 by 
+                 <a href="contact.php">Sam Smolen</a>, All Rights Reserved ~ 
+                 <a id="html-checker" href="#">Check HTML</a> ~ 
+                 <a id="css-checker" href="#">Check CSS</a></small>
+            </p>
+           </footer>
     </div>
 </body>
 </html>
