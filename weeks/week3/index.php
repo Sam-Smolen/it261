@@ -1,5 +1,5 @@
 <?php 
-// our wine list, would it not be an array of wines???
+// A simple navigation menu that changes color of the link of which page you are on at the time
 
 
 
