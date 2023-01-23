@@ -59,7 +59,7 @@ $nav = array(
 
 <header>
 <div class="inner-header">
-<a href="index.php">
+<a href="https://samsmolen.com/it261/">
 
 <img id="logo" src="images/logo.png" alt="logo">    
 </a>

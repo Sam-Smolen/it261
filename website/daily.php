@@ -241,7 +241,7 @@ aside {
 <body>
 <header>
 <div class="inner-header">
-<a href="index.html">
+<a href="https://samsmolen.com/it261/">
 
 <img id="logo" src="images/logo.png" alt="logo">    
 </a>
