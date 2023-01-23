@@ -17,7 +17,7 @@
     <div id="wrapper">
         <nav>
             <ul>
-                <li><a href="">Switch</a></li>
+                <li><a href="website/daily.php">Switch</a></li>
                 <li><a href="">Troubleshoot</a></li>
                 <li><a href="">Calculator</a></li>
                 <li><a href="">Email</a></li>
@@ -27,13 +27,13 @@
         </nav>
         <main>
         <h2 class="display__2">About Sam</h2>
-        <img class="right" src="images/me.jpg" width="300px" height="350px" alt="Picture of me">
+        <img class="right" src="images/me.jpg" alt="Picture of me">
         <p class="about__me">
             A Little bit about me! <br>
             My name is Sam Smolen. I'm currently studying computer programming at Seattle Central College while also employed as a general contractor. My career interests in programming are in the backend rather than design. Although I want to learn how to build full stack applications. <br>I like to spend my freetime with my girlfriend, family or friends, and also my dog Moose. <br>Hobbies of mine would be playing video games, golfing, playing frisbee or working out.
         </p>
-        <img class="left" src="images/mamp.png" width="1000px" height="500px" alt="mamp">
-        <img class="left" src="images/mampError.png" width="1000px" height="500px" alt="mamp error">
+        <img class="left" src="images/mamp.png" alt="mamp">
+        <img class="left" src="images/mampError.png" alt="mamp error">
         </main>
         <aside>
         <h2 class="display__2">Weekly Class Exercises</h2>
@@ -47,7 +47,6 @@
         </ul>
         <h3 class="display__3" style="padding-top:5px;">Week 3</h3>
         <ul class="weekly__exercises">
-            <li><a href="weeks/week3/about.php">about.php</a></li>
             <li><a href="weeks/week3/date.php">date.php</a></li>
             <li><a href="weeks/week3/for-each.php">for-each.php</a></li>
             <li><a href="weeks/week3/for-loop.php">for-loop.php</a></li>
@@ -58,11 +57,17 @@
         </aside>
         <footer>
              <p><small>&copy; 2022 by 
-                 <a href="contact.php">Sam Smolen</a>, All Rights Reserved ~ 
-                 <a id="html-checker" href="#">Check HTML</a> ~ 
-                 <a id="css-checker" href="#">Check CSS</a></small>
+                 <a href="contact.php">Sam Smolen</a>, <a id="html-checker" href="#top" target="_blank">Check HTML</a> ~
+      <a id="css-checker" href="#" target="_blank">Check CSS</a>
             </p>
            </footer>
     </div>
+
+    <script>
+  document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+             
+  document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+</script>
+
 </body>
 </html>

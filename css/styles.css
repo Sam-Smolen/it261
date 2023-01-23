@@ -44,9 +44,14 @@ aside {
     float: right;
 }
 
-.right {
+.right{
     float: right;
     margin-left: 30px;
+}
+
+img.right {
+    width: 300px;
+    height: 350px;
 }
 
 .left {
@@ -54,6 +59,10 @@ aside {
     margin: 50px 0;
 }
 
+img.left {
+    width: 1000px;
+    height: 500px;
+}
 
 h1 {
     text-align: center;
