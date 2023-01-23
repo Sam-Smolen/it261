@@ -41,7 +41,7 @@ switch($today) {
     $pic = 'country.png';
     $alt = 'Country Music';
     $content = '<p>Country is a music genre originating in the Southern and Southwestern United States. First produced in the 1920s, country primarily focuses on working class Americans and blue-collar American life.</p>';
-    echo"<body bgcolor=##9B2915>";
+    echo"<body bgcolor=#9B2915>";
     break;
 
     case 'Friday' :
@@ -118,6 +118,11 @@ $nav = array(
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.test {
+    background-color: red;
+}
+
 #wrapper {
     max-width: 1200px;
     margin: 20px auto;
