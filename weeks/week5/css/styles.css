@@ -37,6 +37,11 @@ input[type=submit] {
     margin-bottom: 10px;
 }
 
+select {
+    display: block;
+    margin-bottom: 10px;
+}
+
 form ul {
     margin-bottom: 10px;
     list-style-type: none;
