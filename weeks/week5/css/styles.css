@@ -13,6 +13,7 @@ body {
 form {
     max-width: 400px;
     margin: 20px auto;
+    background-color: lightgray;
 }
 
 fieldset {
@@ -51,10 +52,24 @@ form ul {
     width: 400px;
     padding: 10px;
     margin: 0 auto;
+    background-color: rgb(133, 130, 130);
+    color: white;
 }
 
 .error {
     color: red;
     font-style: italic;
     text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reset {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 10px;
 }
