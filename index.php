@@ -63,6 +63,13 @@
             <li><a href="weeks/week4/arithmetic-form.php">arithmetic-form.php</a></li>
             <li><a href="weeks/week4/celcius.php">celcius.php</a></li>
         </ul>
+        <h3 class="display__3" style="padding-top:5px;">Week 5</h3>
+        <ul class="weekly__exercises">
+            <li><a href="weeks/week5/currency1.php">currency1.php</a></li>
+            <li><a href="weeks/week5/currency2.php">currency2.php</a></li>
+            <li><a href="weeks/week5/currency3.php">currency3.php</a></li>
+            <li><a href="weeks/week5/currency4.php">currency4.php</a></li>
+        </ul>
         </aside>
         <footer>
              <p><small>&copy; 2022 by 
