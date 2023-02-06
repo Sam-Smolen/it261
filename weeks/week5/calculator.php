@@ -86,19 +86,21 @@
         $hours = floatval($_POST['hours']);
         $price = floatval($_POST['price']);
         $economy = floatval($_POST['economy']);
-        $milesPerDay = $hours * $speed;
-        $totalHours = $miles / $speed;
-        $daysTraveled = $totalHours / $hours;
-        $gallons = $miles / $economy;
-        $totalCost = $gallons * $price;
-        
+        if($speed > 0 && $miles > 0 && $hours > 0 && $price > 0 && $economy > 0) {
+            $milesPerDay = $hours * $speed;
+            $totalHours = $miles / $speed;
+            $daysTraveled = $totalHours / $hours;
+            $gallons = $miles / $economy;
+            $totalCost = $gallons * $price;
+        }
+       
 
         if(!empty($name && $miles && $speed && $hours && $price && $economy)) {
 
         echo '
             <div class="box">
             
-        <p>Hello '.$name.', you will be traveling a total of '.number_format($totalHours, 2).' hours, taking '.number_format($daysTraveled, 2).' days<br>And will be using '.number_format($gallons).' gallons of gas, costing you $'.number_format($totalCost).'</p>
+        <p>Hello '.$miles.', you will be traveling a total of '.number_format($totalHours, 2).' hours, taking '.number_format($daysTraveled, 2).' days<br>And will be using '.number_format($gallons).' gallons of gas, costing you $'.number_format($totalCost).'</p>
             
         </div>
         ';
