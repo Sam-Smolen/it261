@@ -54,3 +54,8 @@ textarea {
     height: 120px;
     width: 100%;
 }
+
+.error {
+    color: red;
+    font-style: italic;
+}
