@@ -10,7 +10,6 @@ $regions_err = '';
 $comments_err = '';
 $privacy_err = '';
 
-
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if(empty($_POST['first_name'])) {
@@ -67,14 +66,7 @@ if(empty($_POST['privacy'])) {
     $privacy = $_POST['privacy'];
 }
 
-
-
-
-
-
-
 } // end server request method
-
 
 ?>
 <!DOCTYPE html>
@@ -159,7 +151,6 @@ if(empty($_POST['privacy'])) {
 
     <option value="ne" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'ne') echo 'selected="selected"' ;?>>Northeast!</option>
 
-
     </select>
     <span class="error"><?php echo $regions_err ;?></span>
     <label>Comments</label>
@@ -176,10 +167,6 @@ if(empty($_POST['privacy'])) {
     <span class="error"><?php echo $privacy_err ;?></span>
     <input type="submit" value="Send it!">
     <input type="button" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF'] ;?>'" value="Reset">
-
-
-
-
 
 </fieldset>
 </form>
