@@ -66,6 +66,38 @@ if(empty($_POST['privacy'])) {
     $privacy = $_POST['privacy'];
 }
 
+if(isset($_POST['first_name'],
+$_POST['last_name'],
+$_POST['email'],
+$_POST['gender'],
+$_POST['phone'],
+$_POST['wines'],
+$_POST['regions'],
+$_POST['comments'],
+$_POST['privacy'])) {
+
+$to = 'sam.smolen@icloud.com';
+$subject = 'Test Email on '.date('m/d/y, h i A');
+$body = '
+First Name : '.$first_name.'  '.PHP_EOL.'
+Last Name : '.$Last_name.'  '.PHP_EOL.'
+Email : '.$email.'  '.PHP_EOL.'
+Gender : '.$gender.'  '.PHP_EOL.'
+Phone : '.$phone.'  '.PHP_EOL.'
+Regions : '.$regions.'  '.PHP_EOL.'
+Comments : '.$comments.'  '.PHP_EOL.'
+';
+
+mail($to, $subject, $body);
+header('Location:thx.php');
+
+} // end isset
+
+
+
+
+
+
 } // end server request method
 
 ?>
