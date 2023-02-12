@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 $first_name = '';
 $last_name = '';
 $email = '';
@@ -18,7 +21,7 @@ $regions_err = '';
 $comments_err = '';
 $privacy_err = '';
 
-ob_start();
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
