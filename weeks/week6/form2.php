@@ -1,5 +1,13 @@
 <?php
-
+$first_name = '';
+$last_name = '';
+$email = '';
+$gender = '';
+$phone = '';
+$wines = '';
+$regions = '';
+$comments = '';
+$privacy = '';
 $first_name_err = '';
 $last_name_err = '';
 $email_err = '';
@@ -9,6 +17,8 @@ $wines_err = '';
 $regions_err = '';
 $comments_err = '';
 $privacy_err = '';
+
+ob_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -66,6 +76,23 @@ if(empty($_POST['privacy'])) {
     $privacy = $_POST['privacy'];
 }
 
+// wines function
+
+function my_wines($wines) {
+    $my_return = '';
+
+    if(!empty($_POST['wines'])) {
+        $my_return = implode(', ', $_POST['wines']);
+
+
+    } else {
+        $wines_err = 'Please fill out your wines';
+    }
+return $my_return;
+
+} // end function
+
+
 if(isset($_POST['first_name'],
 $_POST['last_name'],
 $_POST['email'],
@@ -80,17 +107,33 @@ $to = 'sam.smolen@icloud.com';
 $subject = 'Test Email on '.date('m/d/y, h i A');
 $body = '
 First Name : '.$first_name.'  '.PHP_EOL.'
-Last Name : '.$Last_name.'  '.PHP_EOL.'
+Last Name : '.$last_name.'  '.PHP_EOL.'
 Email : '.$email.'  '.PHP_EOL.'
 Gender : '.$gender.'  '.PHP_EOL.'
 Phone : '.$phone.'  '.PHP_EOL.'
 Regions : '.$regions.'  '.PHP_EOL.'
+Wines : '.my_wines($wines).'  '.PHP_EOL.'
 Comments : '.$comments.'  '.PHP_EOL.'
 ';
 
-mail($to, $subject, $body);
-header('Location:thx.php');
+$headers = array(
+'From' => 'noreply@samsmolen.com'    
+);
 
+if(!empty($first_name && 
+$last_name && 
+$email && 
+$gender && 
+$phone && 
+$regions && 
+$wines && 
+$comments)) {
+
+
+
+mail($to, $subject, $body, $headers);
+header('Location:thx.php');
+}
 } // end isset
 
 
@@ -171,9 +214,9 @@ header('Location:thx.php');
     <label>Regions</label>
     <select name="regions">
         <!-- we will return to options to add additional options when we are making our form sticky -->
-    <option value="" NULL>Select one</option>
+    <option value="" NULL <?php if(isset($_POST['regions']) && $_POST['regions'] == NULL) echo 'selected="unselected"';?>>Select one</option>
 
-    <option value="nw" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'nw') echo 'selected="unselected"';?>>Northwest!</option>
+    <option value="nw" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'nw') echo 'selected="selected"';?>>Northwest!</option>
 
     <option value="sw" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'sw') echo 'selected="selected"' ;?>>Southwest!</option>
 
