@@ -70,6 +70,12 @@
             <li><a href="weeks/week5/currency3.php">currency3.php</a></li>
             <li><a href="weeks/week5/currency4.php">currency4.php</a></li>
         </ul>
+        <h3 class="display__3" style="padding-top:5px;">Week 6</h3>
+        <ul class="weekly__exercises">
+            <li><a href="weeks/week6/form.php">form.php</a></li>
+            <li><a href="weeks/week6/form2.php">form2.php</a></li>
+            <li><a href="weeks/week6/functions.php">functions.php</a></li>
+        </ul>
         </aside>
         <footer>
              <p><small>&copy; 2022 by 
