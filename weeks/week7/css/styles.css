@@ -60,3 +60,6 @@ textarea {
     width: 100%;
 }
 
+input[type=radio] {
+    margin-bottom: 10px;
+}
