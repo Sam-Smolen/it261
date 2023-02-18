@@ -62,10 +62,70 @@ if($_POST['size'] == NULL) {
     $size = $_POST['size'];
 }
 
+
 if(empty($_POST['privacy'])) {
     $privacy_err = 'Please agree to our privacy policy!';
 } else {
     $privacy = $_POST['privacy'];
+}
+
+if(isset($_POST['comments'])) {
+    $comments = $_POST['comments'];
+}
+
+function my_toppings($toppings) {
+    $my_return = '';
+
+    if(!empty($_POST['toppings'])) {
+        $my_return = implode(', ', $_POST['toppings']);
+
+
+    } else {
+        $toppings_err = 'Please select your toppings!';
+    }
+return $my_return;
+
+}
+
+if(isset($_POST['first_name'],
+$_POST['last_name'],
+$_POST['email'],
+$_POST['phone'],
+$_POST['toppings'],
+$_POST['size'],
+$_POST['comments'],
+$_POST['privacy'],)) {
+
+$to = 'sam.smolen@icloud.com';
+$subject = 'Test Email on '.date('m/d/y, h i A');
+$body = '
+First Name: '.$first_name.'  '.PHP_EOL.'
+Last Name: '.$last_name.'  '.PHP_EOL.'
+Email: '.$email.'  '.PHP_EOL.'
+Phone Number: '.$phone.'  '.PHP_EOL.'
+Selected Toppings: '.my_toppings($toppings).'  '.PHP_EOL.'
+Size: '.$size.'  '.PHP_EOL.'
+Additional instructions/comments : '.$comments.'  '.PHP_EOL.'
+';
+
+$headers = array(
+    'From' => 'noreply@samsmolen.com'    
+    );
+    
+    if(!empty($first_name && 
+    $last_name && 
+    $email && 
+    $phone && 
+    $toppings && 
+    $size &&
+    $privacy) && 
+    preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+    
+    
+    
+    mail($to, $subject, $body, $headers);
+    header('Location:thx.php');
+    }
 }
 
 
@@ -150,7 +210,7 @@ if(empty($_POST['privacy'])) {
     <span class="error"><?php echo $size_err ;?></span>
 
     <label>Additional Comments or Instructions (not required.)</label>
-    <textarea name="comments"></textarea>
+    <textarea name="comments"><?php if(isset($_POST['comments'])) echo htmlspecialchars($_POST['comments']) ;?></textarea>
 
     <label>Privacy</label>
     <ul>
