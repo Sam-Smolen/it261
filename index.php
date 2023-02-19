@@ -34,6 +34,32 @@
         </p>
         <img class="left" src="images/mamp.png" alt="mamp">
         <img class="left" src="images/mampError.png" alt="mamp error">
+
+        <?php
+        // random images
+
+        $photos[0] = 'photo1';
+        $photos[1] = 'photo2';
+        $photos[2] = 'photo3';
+        $photos[3] = 'photo4';
+        $photos[4] = 'photo5';
+
+        $i = rand(0, 4);
+
+        $selected_image = ''.$photos[$i].'.jpg ';
+        echo '<img src="./images/'.$selected_image.'" alt="'.$photos[$i].'" >';
+        
+        function random_images($photos) {
+        $my_return = '';
+        $i = rand(0, 4);
+        $selected_image = ''.$photos[$i].'.jpg ';
+        $my_return = '<img src="./images/'.$selected_image.'" alt="'.$photos[$i].'" >';
+        return $my_return;
+        } // end function
+        
+        echo random_images($photos);
+    
+        ?>
         </main>
         <aside>
         <h2 class="display__2">Weekly Class Exercises</h2>
