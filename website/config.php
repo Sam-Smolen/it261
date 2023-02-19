@@ -62,149 +62,134 @@ $nav = array(
 
 // my forms PHP
 
-
-
+ob_start();
 
 $first_name = '';
 $last_name = '';
 $email = '';
-$gender = '';
 $phone = '';
-$wines = '';
-$regions = '';
+$toppings = '';
+$size = '';
 $comments = '';
 $privacy = '';
 $first_name_err = '';
 $last_name_err = '';
 $email_err = '';
-$gender_err = '';
 $phone_err = '';
-$wines_err = '';
-$regions_err = '';
-$comments_err = '';
+$toppings_err = '';
+$size_err = '';
 $privacy_err = '';
-
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if(empty($_POST['first_name'])) {
- $first_name_err = 'Please fill out your first name';
+    $first_name_err = 'Please enter your first name!';
 } else {
     $first_name = $_POST['first_name'];
 }
 
-if(empty($_POST['last_name'])){
-    $last_name_err = 'Please fill out your last name';
+if(empty($_POST['last_name'])) {
+    $last_name_err = 'Please enter your last name!';
 } else {
     $last_name = $_POST['last_name'];
 }
 
 if(empty($_POST['email'])) {
-    $email_err = 'Please fill out your email so we can spam you';
+    $email_err = 'Please provide an email address!';
 } else {
     $email = $_POST['email'];
 }
 
-if(empty($_POST['gender'])){
-    $gender_err = 'Please choose your gender';
-} else {
-    $gender = $_POST['gender'];
-}
-
-if(empty($_POST['phone'])){
-    $phone_err = 'Please fill out your phone number';
-} else {
+if(empty($_POST['phone'])) { // if empty, type in your number
+    $phone_err = 'Your phone number please!';
+    } elseif(array_key_exists('phone', $_POST)){
+    if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone']))
+    { // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
+    $phone_err = 'Invalid format!';
+    } else{
     $phone = $_POST['phone'];
+    } // end else
+    } // end main if
+
+if(empty($_POST['toppings'])) {
+    $toppings_err = 'You must choose at least one topping!';
+} else {
+    $toppings = $_POST['toppings'];
 }
 
-if(empty($_POST['wines'])) {
-$wines_err = 'What, no wines?';
+if($_POST['size'] == NULL) {
+    $size_err = 'Select a size';
 } else {
-    $wines = $_POST['wines'];
+    $size = $_POST['size'];
 }
 
-if($_POST['regions'] == NULL) {
-    $regions_err = 'Please select your region!';
-} else {
-    $regions = $_POST['regions'];
-}
-
-if(empty($_POST['comments'])) {
-    $comments_err = 'Please share your thoughts with us';
-} else {
-    $comments = $_POST['comments'];
-}
 
 if(empty($_POST['privacy'])) {
-    $privacy_err = 'Please agree to our privacy policy';
+    $privacy_err = 'Please agree to our privacy policy!';
 } else {
     $privacy = $_POST['privacy'];
 }
 
-// wines function
+if(isset($_POST['comments'])) {
+    $comments = $_POST['comments'];
+}
 
-function my_wines($wines) {
+function my_toppings($toppings) {
     $my_return = '';
 
-    if(!empty($_POST['wines'])) {
-        $my_return = implode(', ', $_POST['wines']);
+    if(!empty($_POST['toppings'])) {
+        $my_return = implode(', ', $_POST['toppings']);
 
 
     } else {
-        $wines_err = 'Please fill out your wines';
+        $toppings_err = 'Please select your toppings!';
     }
 return $my_return;
 
-} // end function
-
+}
 
 if(isset($_POST['first_name'],
 $_POST['last_name'],
 $_POST['email'],
-$_POST['gender'],
 $_POST['phone'],
-$_POST['wines'],
-$_POST['regions'],
+$_POST['toppings'],
+$_POST['size'],
 $_POST['comments'],
-$_POST['privacy'])) {
+$_POST['privacy'],)) {
 
 $to = 'sam.smolen@icloud.com';
 $subject = 'Test Email on '.date('m/d/y, h i A');
 $body = '
-First Name : '.$first_name.'  '.PHP_EOL.'
-Last Name : '.$last_name.'  '.PHP_EOL.'
-Email : '.$email.'  '.PHP_EOL.'
-Gender : '.$gender.'  '.PHP_EOL.'
-Phone : '.$phone.'  '.PHP_EOL.'
-Regions : '.$regions.'  '.PHP_EOL.'
-Wines : '.my_wines($wines).'  '.PHP_EOL.'
-Comments : '.$comments.'  '.PHP_EOL.'
+First Name: '.$first_name.'  '.PHP_EOL.'
+Last Name: '.$last_name.'  '.PHP_EOL.'
+Email: '.$email.'  '.PHP_EOL.'
+Phone Number: '.$phone.'  '.PHP_EOL.'
+Selected Toppings: '.my_toppings($toppings).'  '.PHP_EOL.'
+Size: '.$size.'  '.PHP_EOL.'
+Additional instructions/comments : '.$comments.'  '.PHP_EOL.'
 ';
 
 $headers = array(
-'From' => 'noreply@samsmolen.com'    
-);
-
-if(!empty($first_name && 
-$last_name && 
-$email && 
-$gender && 
-$phone && 
-$regions && 
-$wines && 
-$comments)) {
-
-
-
-mail($to, $subject, $body, $headers);
-header('Location:thx.php');
+    'From' => 'noreply@samsmolen.com'    
+    );
+    
+    if(!empty($first_name && 
+    $last_name && 
+    $email && 
+    $phone && 
+    $toppings && 
+    $size &&
+    $privacy) && 
+    preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+    
+    
+    
+    mail($to, $subject, $body, $headers);
+    header('Location:thx.php');
+    }
 }
-} // end isset
+
+}
 
 
-
-
-
-
-} // end server request method

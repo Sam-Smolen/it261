@@ -20,7 +20,7 @@
                 <li><a href="website/daily.php">Switch</a></li>
                 <li><a href="weeks/week4/troubleshoot.php">Troubleshoot</a></li>
                 <li><a href="weeks/week5/calculator.php">Calculator</a></li>
-                <li><a href="">Email</a></li>
+                <li><a href="https://samsmolen.com/it261/website/contact.php">Email</a></li>
                 <li><a href="">Database</a></li>
                 <li><a href="">Gallery</a></li>
             </ul>
@@ -75,6 +75,13 @@
             <li><a href="weeks/week6/form.php">form.php</a></li>
             <li><a href="weeks/week6/form2.php">form2.php</a></li>
             <li><a href="weeks/week6/functions.php">functions.php</a></li>
+        </ul>
+        <h3 class="display__3" style="padding-top:5px;">Week 7</h3>
+        <ul class="weekly__exercises">
+            <li><a href="weeks/week7/form3.php">form3.php</a></li>
+            <li><a href="weeks/week7/pictures.php">pictures.php</a></li>
+            <li><a href="weeks/week7/rand.php">rand.php</a></li>
+            <li><a href="weeks/week7/strings.php">strings.php</a></li>
         </ul>
         </aside>
         <footer>

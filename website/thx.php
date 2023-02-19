@@ -8,13 +8,12 @@ include('./includes/header.php');
 
 <!-- end hero -->
 <main>
-<h1>Welcome to our Contact Page!</h1>
+<h1>Thank You For using our Contact Page!</h1>
 
 <p>
-    Send us an email
+   Your email has been sent!
 </p>
 
-<?php  include('./includes/form.php'); ?>
 
 </main>
 <aside>
