@@ -1,6 +1,10 @@
 <?php
 include('config.php');
-
+include('./includes/header.php');
+?>
+<div id="wrapper">
+<main>
+<?php 
 $sql = 'SELECT * FROM people';
 // now we have to connect to our database
 
@@ -34,7 +38,29 @@ echo '
 } // end while
 
 
-$photos[0] = 'photo1';
+
+
+
+
+} else { // end if number of rows is greater than 0
+echo 'Nobody is home!';
+}
+
+// we are going to release the server
+
+@mysqli_free_result($result);
+
+// close the connection
+
+@mysqli_close($iConn);
+
+?>
+
+</main>
+<aside>
+    <h3>I will be displaying my random images here</h3>
+<?php
+    $photos[0] = 'photo1';
 $photos[1] = 'photo2';
 $photos[2] = 'photo3';
 $photos[3] = 'photo4';
@@ -44,7 +70,11 @@ $i = rand(0, 4);
 
 $selected_image = ''.$photos[$i].'.jpg ';
 echo '<img src="./images/'.$selected_image.'" alt="'.$photos[$i].'" >';
+?>
+</aside>
 
+</div>
+<!-- end wrapper -->
 
-
-} // end if number of rows is greater than 0
+<?php
+include('./includes/footer.php');
