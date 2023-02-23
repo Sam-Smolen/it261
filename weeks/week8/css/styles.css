@@ -27,4 +27,12 @@ aside {
 
 footer {
     clear: both;
+    text-align: center;
+    padding: 1em;
+    color: black;
+    margin-bottom: 10px;
+    height: 10vh;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
 }
