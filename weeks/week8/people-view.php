@@ -64,7 +64,7 @@ include('./includes/header.php');
         ';
         ?>
         </ul>
-        <p><a href="">Return to the people page!</a></p>
+        <p><a href="people.php">Return to the people page!</a></p>
 
 
 
@@ -73,8 +73,20 @@ include('./includes/header.php');
 
 <aside>
 <h3>This is my Aside</h3>
+<figure>
+<img src="./images/people<?php echo $id ;?>.jpg" alt="<?php echo $first_name ;?>">
+<figcaption>
+<?php
+echo '
+'.$first_name.' '.$last_name.', '.$occupation.'
 
-
+';
+?>
+</figcaption>
+</figure>
+<p><i><?php
+echo $blurb;
+?></i></p>
 </aside>
 
 <?php
