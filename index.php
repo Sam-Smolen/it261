@@ -109,6 +109,11 @@
             <li><a href="weeks/week7/rand.php">rand.php</a></li>
             <li><a href="weeks/week7/strings.php">strings.php</a></li>
         </ul>
+        <h3 class="display__3" style="padding-top:5px;">Week 8</h3>
+        <ul class="weekly__exercises">
+            <li><a href="weeks/week8/people.php">people.php</a></li>
+            <li><a href="weeks/week8/people-view.php">people-view.php</a></li>
+        </ul>
         </aside>
         <footer>
              <p><small>&copy; 2022 by 
