@@ -90,5 +90,3 @@ $founder ['Horacio_Pagani'] = 'pagan_Horacio Pagani is an Argentine-Italian busi
     <?php 
     include('./includes/footer.php');
     ?>
-</body>
-</html>
