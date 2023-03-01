@@ -1,5 +1,5 @@
 <?php 
-//include('server.php');
+include('server.php');
 // eventually we will place our header include here!!!!
 // include ('./includes/header.php');
 ?>
