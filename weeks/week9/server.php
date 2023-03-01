@@ -50,6 +50,55 @@ if($password_1 !== $password_2) {
     array_push($errors, "Passwords do not match!");
 }
 
+// we are checking the username and password...AND selecting it from the table
+
+$user_check_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email' LIMIT 1";
+
+$result = mysqli_query($iConn, $user_check_query) or die(myError(__FILE__,__LINE__,mysqli_connect_error($iConn)));
+
+$rows = mysqli_fetch_assoc($result);
+
+// we are going to have an if statement, and we will nest 2 additional if statements inside our main if statement
+// bottom line is, we cannot have duplicate usernames or duplicate emails
+if($row) {
+
+if($rows['username'] == $username) {
+    array_push($errors, 'Username already exists!');
+}
+
+if($rows['email'] == $email) {
+    array_push($errors, 'Email already exists!');
+}
+
+
+} // close if statement
+
+// do we have any errors??? idealistically, no errors!!!
+
+if(count($errors) == 0) {
+
+$password = md5($_password_1);
+
+// now its time to insert the information into our table!!!
+
+
+$query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+
+
+mysqli_query($iConn, $query);
+
+$_SESSION['username'] = $username;
+$_SESSION['success'] = $success;
+
+// if we are successful, then we will be directed to our login page!!!
+
+header('Location:login.php');
+
+
+
+
+
+} // close if count errors
 
 
 
@@ -61,4 +110,8 @@ if($password_1 !== $password_2) {
 
 
 
-} // end if isset
+
+
+
+
+} // end if isset reg_user
