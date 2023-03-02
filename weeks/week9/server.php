@@ -82,7 +82,7 @@ $password = md5($password_1);
 // now its time to insert the information into our table!!!
 
 
-$query = "INSERT INTO users (first_name, last_name, email, username, password_1, password_2) VALUES ('$first_name', '$last_name', '$email', '$username', '$password','$password')";
+$query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password')";
 
 
 mysqli_query($iConn, $query);
