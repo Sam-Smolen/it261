@@ -11,6 +11,7 @@ include('config.php');
 
 $iConn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die(myError(__FILE__,__LINE__,mysqli_connect_error()));
 
+$errors = [];
 // register the user, using if isset reg_user
 
 if(isset($_POST['reg_user'])) {
@@ -30,19 +31,19 @@ if(empty($first_name)) {
 
 if(empty($last_name)) {
     array_push($errors, "Last name is required!!!");
- }
+}
 
- if(empty($email)) {
+if(empty($email)) {
     array_push($errors, "Email is required!!!");
- }
+}
 
- if(empty($username)) {
+if(empty($username)) {
     array_push($errors, "Username is required!!!");
- }
+}
 
- if(empty($password_1)) {
+if(empty($password_1)) {
     array_push($errors, "Password is required!!!");
- }
+}
 
 // our logic is this - is password_1 !== to password_2
 
@@ -60,7 +61,7 @@ $rows = mysqli_fetch_assoc($result);
 
 // we are going to have an if statement, and we will nest 2 additional if statements inside our main if statement
 // bottom line is, we cannot have duplicate usernames or duplicate emails
-if($row) {
+if($rows) {
 
 if($rows['username'] == $username) {
     array_push($errors, 'Username already exists!');
@@ -74,15 +75,14 @@ if($rows['email'] == $email) {
 } // close if statement
 
 // do we have any errors??? idealistically, no errors!!!
-
 if(count($errors) == 0) {
 
-$password = md5($_password_1);
+$password = md5($password_1);
 
 // now its time to insert the information into our table!!!
 
 
-$query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+$query = "INSERT INTO users (first_name, last_name, email, username, password_1, password_2) VALUES ('$first_name', '$last_name', '$email', '$username', '$password','$password')";
 
 
 mysqli_query($iConn, $query);
