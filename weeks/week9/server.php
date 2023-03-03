@@ -103,15 +103,60 @@ header('Location:login.php');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 } // end if isset reg_user
+
+
+// NOW, we must communicate with the login page - we will ask the same question !!
+
+if(isset($_POST['login_user'])) {
+    $username = mysqli_real_escape_string($iConn, $_POST['username']);
+    $password = mysqli_real_escape_string($iConn, $_POST['password']);
+
+if(empty($username)) {
+    array_push($errors, "Username is required");
+}
+
+if(empty($password)) {
+    array_push($errors, "Password is required");
+}
+
+// we will be counting our errors and hope that we have zero errors!
+
+if(count($errors) == 0) {
+
+    $password = md5($password);
+
+    $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    // below you have a new variable that is results NOT result
+    $results = mysqli_query($iConn, $query);
+
+
+    if(mysqli_num_rows($results) == 1) {
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = $success;
+        // if the above is successful, the user will be directed to the home page, which will be index.php
+
+        header('Location:index.php');
+
+    } else {
+
+        array_push($errors, 'Wrong username/password combination');
+
+    } // close else 
+
+
+
+
+
+} // close count
+
+
+
+
+
+} // close isset login user
+
+
+
+
+?>
