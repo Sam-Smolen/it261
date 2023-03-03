@@ -2,7 +2,7 @@
 // our login page
 include('server.php');
 // include('./includes/header.php');
-
+//
 ?>
 
 <h1>Login page!</h1>
