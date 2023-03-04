@@ -46,7 +46,7 @@ echo 'Nobody is home!';
 
 <h3>This is my aside</h3>
 <aside>
-    <h3>Check out these other titles!</h3>
+    <h3>Check out these other titles!!</h3>
     <?php
     $photos[0] = 'scary1';
     $photos[1] = 'scary2';
