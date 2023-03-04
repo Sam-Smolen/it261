@@ -226,3 +226,11 @@ hr {
     border: 2px solid rgb(8, 29, 8);
     margin: 10px 0;
 }
+
+.about-view {
+    text-align: center;
+    background: lightblue;
+    float: left;
+    color: limegreen;
+    background-color: black;
+}
