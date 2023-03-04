@@ -201,3 +201,28 @@ p a {
 main h2 {
     margin-bottom: 30px;
 }
+
+.db-view {
+    width: 35%;
+    color: limegreen;
+    background-color: black;
+    float: right;
+}
+
+.db-view img {
+    width: 100%;
+}
+
+.blurb {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.plot {
+    margin-top: 15px;
+}
+
+hr {
+    border: 2px solid rgb(8, 29, 8);
+    margin: 10px 0;
+}

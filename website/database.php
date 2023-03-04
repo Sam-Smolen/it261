@@ -27,6 +27,7 @@ echo '
 <li><b>Country: '.$row['country'].'</b></li>
 </ul>
 <p>For more information about '.$row['movie_name'].', <b>click <a href="database-view.php?id='.$row['movie_id'].'">here</b></a></p>
+<hr>
 ';
 
 
@@ -51,7 +52,7 @@ echo 'Nobody is home!';
 
 
 <aside>
-    <h3>Check out these other titles!!</h3>
+    <h3>More Scary movies!</h3>
     <?php
     $photos[0] = 'scary1';
     $photos[1] = 'scary2';

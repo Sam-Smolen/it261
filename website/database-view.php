@@ -8,12 +8,12 @@ include('config.php');
 if(isset($_GET['id'])) {
     $id = (int)$_GET['id'];
 } else {
-    header('Location:people.php');
+    header('Location:database.php');
 }
 
 // we will now select from the table who people id = id
 
-$sql = 'SELECT * FROM people WHERE people_id = '.$id.'';
+$sql = 'SELECT * FROM scary_movies WHERE movie_id = '.$id.'';
 
 $iConn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die(myError(__FILE__,__LINE__,mysqli_connect_error()));
 
@@ -21,13 +21,15 @@ $result = mysqli_query($iConn, $sql) or die(myError(__FILE__,__LINE__,mysqli_err
 
 if(mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-        $first_name = stripcslashes($row['first_name']);
-        $last_name = stripcslashes($row['last_name']);
-        $email = stripcslashes($row['email']);
-        $birthdate = stripcslashes($row['birthdate']);
+        $movie_name = stripcslashes($row['movie_name']);
+        $year_released = stripcslashes($row['year_released']);
+        $country = stripcslashes($row['country']);
+        $budget = stripcslashes($row['budget']);
         $occupation = stripcslashes($row['occupation']);
+        $box_office = stripcslashes($row['box_office']);
+        $director_name = stripcslashes($row['director_name']);
         $blurb = stripcslashes($row['blurb']);
-        $details = stripcslashes($row['details']);
+        $plot = stripcslashes($row['plot']);
         $feedback = '';
     
     
@@ -49,45 +51,45 @@ include('./includes/db_header.php');
 <div id="wrapper">
 <main>
     <h1>Welcome to Our Movie View Page!</h1>
-    <h2>Introducing you to <?php echo $first_name;?>'s Page</h2>
+    <h2><?php echo $movie_name;?></h2>
         <ul>
         <?php
         echo '
-        <li><b>First Name: </b>'.$first_name.'</li>
-        <li><b>Last Name: </b>'.$last_name.'</li>
-        <li><b>Email: </b>'.$email.'</li>
-        <li><b>Birthdate: </b>'.$birthdate.'</li>
-        <li><b>Occupation: </b>'.$occupation.'</li>
+        <li><b>Director: </b>'.$director_name.'</li>
+        <li><b>Year Released: </b>'.$year_released.'</li>
+        <li><b>Country: </b>'.$country.'</li>
+        <li><b>Budget: </b>'.$budget.'</li>
+        <li><b>Box Office: </b>'.$box_office.'</li>
         <li>
-        <p>'.$details.'</p>
+        <p class="blurb">'.$blurb.'</p>
         </li>
         ';
         ?>
         </ul>
-        <p><a href="people.php">Return to the people page!</a></p>
+        <p><a href="database.php">Return to the movie page!</a></p>
 
 
 
 
 </main>
 
-<aside>
-<h3>This is my Aside</h3>
+<div class="db-view">
+
 <figure>
-<img src="./images/people<?php echo $id ;?>.jpg" alt="<?php echo $first_name ;?>">
+<img src="./images/movie<?php echo $id ;?>.png" alt="<?php echo $movie_name ;?>">
 <figcaption>
 <?php
 echo '
-'.$first_name.' '.$last_name.', '.$occupation.'
+'.$movie_name.' | '.$director_name.', | '.$year_released.' --
 
 ';
 ?>
 </figcaption>
 </figure>
-<p><i><?php
-echo $blurb;
+<p class="plot"><i><?php
+echo $plot;
 ?></i></p>
-</aside>
+</div>
 
 <?php
 // we are going to release the server
