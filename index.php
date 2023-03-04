@@ -21,8 +21,8 @@
                 <li><a href="weeks/week4/troubleshoot.php">Troubleshoot</a></li>
                 <li><a href="weeks/week5/calculator.php">Calculator</a></li>
                 <li><a href="https://samsmolen.com/it261/website/contact.php">Email</a></li>
-                <li><a href="">Database</a></li>
-                <li><a href="">Gallery</a></li>
+                <li><a href="https://samsmolen.com/it261/website/database.php">Database</a></li>
+                <li><a href="https://samsmolen.com/it261/website/gallery.php">Gallery</a></li>
             </ul>
         </nav>
         <main>
@@ -113,6 +113,11 @@
         <ul class="weekly__exercises">
             <li><a href="weeks/week8/people.php">people.php</a></li>
             <li><a href="weeks/week8/people-view.php">people-view.php</a></li>
+        </ul>
+        <h3 class="display__3" style="padding-top:5px;">Week 9</h3>
+        <ul class="weekly__exercises">
+            <li><a href="weeks/week9/register.php">register.php</a></li>
+            <li><a href="weeks/week9/login.php">login.php</a></li>
         </ul>
         </aside>
         <footer>
