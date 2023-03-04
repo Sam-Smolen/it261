@@ -19,9 +19,9 @@ switch(THIS_PAGE) {
     $body = 'daily inner';
     break;
             
-    case 'project.php' :
-     $title = 'Project page of our Website Project';
-     $body = 'project inner';
+    case 'database.php' :
+     $title = 'Database page of our Website Project';
+     $body = 'database inner';
     break;
 
     case 'contact.php' :
@@ -41,7 +41,7 @@ $nav = array(
     'index.php' => 'Home',
     'about.php' => 'About',
     'daily.php' => 'Daily',
-    'project.php' => 'Project',
+    'database.php' => 'Movies',
     'contact.php' => 'Contact',
     'gallery.php' => 'Gallery',
 );

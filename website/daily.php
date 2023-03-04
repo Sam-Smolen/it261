@@ -81,7 +81,7 @@ switch(THIS_PAGE) {
     case 'daily.php' :
     break;
             
-    case 'project.php' :
+    case 'database.php' :
     break;
 
     case 'contact.php' :
@@ -96,7 +96,7 @@ $nav = array(
     'index.php' => 'Home',
     'about.php' => 'About',
     'daily.php' => 'Daily',
-    'project.php' => 'Project',
+    'database.php' => 'Movies',
     'contact.php' => 'Contact',
     'gallery.php' => 'Gallery',
 );
