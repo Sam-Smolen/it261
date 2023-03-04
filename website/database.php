@@ -6,7 +6,7 @@ include('./includes/db_header.php');
 ?>
 <div id="wrapper">
 <main> 
-<h1>My week 9 Database HW! <br>Scary Movies!</h1>
+<h1>My week 9 Database HW!</h1><br><h2>Scary Movies!</h2>
 <?php 
 $sql = 'SELECT * FROM scary_movies';
 
@@ -20,8 +20,13 @@ if(mysqli_num_rows($result) > 0)  {
 while($row = mysqli_fetch_assoc($result)) {
 
 echo '
-<h2>'.$row['movie_name'].' ('.$row['year_released'].')</h2>
-
+<h2><i>'.$row['movie_name'].' ('.$row['year_released'].')</i></h2>
+<ul>
+<li><b>Director: '.$row['director_name'].'</b></li>
+<li><b>Box office: '.$row['box_office'].'</b></li>
+<li><b>Country: '.$row['country'].'</b></li>
+</ul>
+<p>For more information about '.$row['movie_name'].', <b>click <a href="database-view.php?id='.$row['movie_id'].'">here</b></a></p>
 ';
 
 
@@ -42,9 +47,9 @@ echo 'Nobody is home!';
 
 </main>
 
-<aside>
 
-<h3>This is my aside</h3>
+
+
 <aside>
     <h3>Check out these other titles!!</h3>
     <?php
