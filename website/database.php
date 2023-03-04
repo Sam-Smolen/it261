@@ -26,7 +26,7 @@ echo '
 <li><b>Box office: '.$row['box_office'].'</b></li>
 <li><b>Country: '.$row['country'].'</b></li>
 </ul>
-<p>For more information about '.$row['movie_name'].', <b>click <a href="database-view.php?id='.$row['movie_id'].'">here</b></a></p>
+<p>For more information about '.$row['movie_name'].', <b>click <a href="database-view.php?id='.$row['movie_id'].'">here</a></b></p>
 <hr>
 ';
 
