@@ -1,10 +1,10 @@
 <?php
 // our login page
 include('server.php');
-// include('./includes/header.php');
-//
-?>
+include('./includes/header.php');
 
+?>
+<div id="wrapper">
 <h1>Login page!</h1>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 
@@ -29,3 +29,10 @@ include('errors.php');
 </form>
 
 <p>Haven't Registered? Please visit our <a href="register.php">Registration Page!</a></p>
+
+
+</div>
+<!-- close wrapper -->
+
+<?php
+include('./includes/footer.php');

@@ -19,7 +19,7 @@ if(isset($_GET['logout'])) {
     header('Location:login.php');
 }
 
-//include('./includes/header.php');
+include('./includes/header.php');
 
 // logic - is our session success set?
 
@@ -52,4 +52,4 @@ if(isset($_SESSION['username'])) :?>
 </div>
 
 <?php
-//include('./includes/footer.php');
+include('./includes/footer.php');
