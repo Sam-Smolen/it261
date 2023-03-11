@@ -20,9 +20,11 @@ if(isset($_GET['logout'])) {
 }
 
 include('./includes/header.php');
+?>
 
-// logic - is our session success set?
+<header>
 
+<?php
 if(isset($_SESSION['success'])) :?>
 <div class="success">
     <h3>
@@ -44,6 +46,8 @@ if(isset($_SESSION['username'])) :?>
 </div>
 <!-- close welcome loogout -->
 <?php endif; ?>
+
+</header>
 
 <div id="wrapper">
 <h1>Welcome to our home page!!!</h1>

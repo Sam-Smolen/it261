@@ -4,7 +4,7 @@ include('server.php');
 include ('./includes/header.php');
 ?>
 <div id="wrapper">
-<h1>Register Today</h1>
+<h1 class="center">Register Today</h1>
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
 <fieldset>
@@ -39,7 +39,7 @@ include('errors.php');
 
 </form>
 
-<p>Already have an account? <a href="login.php">Please login!</a></p>
+<p class="center">Already have an account? <a href="login.php">Please login!</a></p>
 
 </div>
 <!-- close wrapper div -->
